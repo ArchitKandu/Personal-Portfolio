@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 
-const NavBar = () => {
+export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
@@ -66,10 +66,18 @@ const NavBar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="https://www.linkedin.com/in/architkandu/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/architkandu/"
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+              >
                 <img src={navIcon1} alt="nav-home" />
               </a>
-              <a href="https://github.com/ArchitKandu" target="_blank">
+              <a
+                href="https://github.com/ArchitKandu"
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+              >
                 <img src={navIcon2} alt="nav-home" />
               </a>
             </div>
@@ -85,5 +93,3 @@ const NavBar = () => {
     </Navbar>
   );
 };
-
-export default NavBar;
