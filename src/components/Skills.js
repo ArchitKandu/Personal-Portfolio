@@ -54,43 +54,43 @@ export const Skills = () => {
                 className="skill-slider"
               >
                 <div className="item">
-                  <img src={nodeJs} alt="Image" />
+                  <img src={nodeJs} alt="Nodejs" />
                   <h5>Node.js</h5>
                 </div>
                 <div className="item">
-                  <img src={reactJs} alt="Image" />
+                  <img src={reactJs} alt="Reactjs" />
                   <h5>React.js</h5>
                 </div>
                 <div className="item">
-                  <img src={expressJs} alt="Image" />
+                  <img src={expressJs} alt="Expressjs" />
                   <h5>Express.js</h5>
                 </div>
                 <div className="item">
-                  <img src={mongoDb} alt="Image" />
+                  <img src={mongoDb} alt="Mongodb" />
                   <h5>MongoDB</h5>
                 </div>
                 <div className="item">
-                  <img src={oracle} alt="Image" />
+                  <img src={oracle} alt="Oracle" />
                   <h5>OracleDB</h5>
                 </div>
                 <div className="item">
-                  <img src={git} alt="Image" />
+                  <img src={git} alt="Git" />
                   <h5>Git</h5>
                 </div>
                 <div className="item">
-                  <img src={npm} alt="Image" />
+                  <img src={npm} alt="NPM" />
                   <h5>NPM</h5>
                 </div>
                 <div className="item">
-                  <img src={materialUi} alt="Image" />
+                  <img src={materialUi} alt="Material UI" />
                   <h5>Material UI</h5>
                 </div>
                 <div className="item">
-                  <img src={postman} alt="Image" />
+                  <img src={postman} alt="Postman" />
                   <h5>Postman</h5>
                 </div>
                 <div className="item">
-                  <img src={putty} alt="Image" />
+                  <img src={putty} alt="PuTTY" />
                   <h5>PuTTY</h5>
                 </div>
               </Carousel>
