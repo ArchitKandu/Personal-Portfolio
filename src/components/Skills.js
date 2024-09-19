@@ -44,9 +44,9 @@ export const Skills = () => {
               <p>
                 Here are some of the skills I have developed over time:
                 proficiency in full-stack web development using JavaScript,
-                ReactJS, NodeJS, and MongoDB. I possess strong
-                problem-solving abilities, team collaboration skills, and
-                expertise in optimizing application performance.
+                ReactJS, NodeJS, and MongoDB. I possess strong problem-solving
+                abilities, team collaboration skills, and expertise in
+                optimizing application performance.
               </p>
               <Carousel
                 responsive={responsive}
@@ -98,7 +98,6 @@ export const Skills = () => {
           </Col>
         </Row>
       </Container>
-      <img src={colorSharp} alt="BgImgLft" className="backgroung-image-left" />
     </section>
   );
 };
