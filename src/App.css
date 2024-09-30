@@ -25,8 +25,22 @@
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 75px;
+    font-size: 16px;
 }
 
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+        /* For mobile screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+        /* For large screens */
+    }
+}
 body{
     font-weight: 400;
     overflow-x: hidden;
@@ -90,7 +104,7 @@ nav.navbar.scrolled {
 
 nav.navbar span.navbar-brand {
     width: 9%;
-    font-size: 200%;
+    font-size: 2.5rem;
     color: #fff;
 }
 
@@ -270,13 +284,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 8px 10px;
     background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-bottom: 16px;
     display: inline-block;
 }
 
 .banner h1 {
-    font-size: 65px;
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 1;
@@ -286,10 +300,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .banner p {
     color: #B8B8B8;
-    font-size: 18px;
+    font-size: 1.2rem;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     width: 96%;
+    text-align: justify;
 }
 
 .banner button {
@@ -346,12 +361,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background: #151515;
     border-radius: 64px;
     text-align: center;
-    padding: 60px 50px;
+    padding: 60px 30px;
     margin-top: -60px;
 }
 
 .skill h2 {
-    font-size: 45px;
+    font-size: 2.25rem;
     font-weight: 700;
 }
 
@@ -370,8 +385,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-slider .item img{
-    width: 50%;
+    width: 40%;
     margin: 0 auto 15px auto;
+    text-align: center;
 }
 
 /************ Projects Css ************/
@@ -382,14 +398,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .project h2 {
-    font-size: 45px;
+    font-size: 2.25rem;
     font-weight: 700;
     text-align: center;
 }
 
 .project p {
     color: #B8B8B8;
-    font-size: 18px;
+    font-size: 1.1rem;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     margin: 14px auto 30px auto;
@@ -469,3 +485,142 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     z-index: -4;
 }
 
+/************ Contact Css ************/
+.contact {
+    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    padding: 60px 0 100px 0;
+}
+
+.contact img {
+    width: 92%;
+}
+.form-container {
+    padding: 0 20px !important;
+}
+.contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    color: #fff;
+    margin: 0 0 8px 0;
+    padding: 18px 26px;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    transition: 0.3s ease-in-out;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    background: rgba(255, 255, 255, 1);
+    color: #121212;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+    color: #121212;
+    opacity: 0.8;
+}
+
+.contact form button {
+    font-weight: 700;
+    width: 150px;
+    color: #000;
+    background-color: #fff;
+    padding: 14px;
+    font-size: 18px;
+    margin-top: 25px;
+    border-radius: 0;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.contact form button span {
+    z-index: 1;
+    position: relative;
+}
+
+.contact form button:hover {
+    color: #fff;
+}
+
+.contact form button::before {
+    content: "";
+    background: #121212;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.contact form button:hover::before {
+    width: 100%;
+}
+
+.danger, .success{
+    text-align: center;
+    color: #fff !important;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.danger {
+    background-color: #f44336;
+}
+.success {
+    background-color: #4CAF50;
+}
+
+/************ Footer Css ************/
+
+footer {
+    padding: 15px 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer .navbar-brand {
+    width: 26%;
+    font-size: 2rem;
+}
+
+footer p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #B8B8B8;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 575px) {
+    .footer-brand {
+        text-align: center;
+    }
+}

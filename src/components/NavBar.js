@@ -83,7 +83,7 @@ export const NavBar = () => {
             </div>
             <button
               className="vvd"
-              onClick={() => console.log("Let's Connect")}
+              onClick={() => window.location.replace("/#contact")}
             >
               <span>Let's Connect</span>
             </button>

@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import colorSharp from "../assets/img/color-sharp.png";
 import nodeJs from "../assets/icons/nodejs-plain-wordmark.svg";
 import reactJs from "../assets/icons/react-original.svg";
 import expressJs from "../assets/icons/express-original.svg";
@@ -12,6 +11,8 @@ import npm from "../assets/icons/npm-original-wordmark.svg";
 import materialUi from "../assets/icons/materialui-plain.svg";
 import postman from "../assets/icons/postman-original.svg";
 import putty from "../assets/icons/putty-original.svg";
+import cpp from "../assets/icons/cplusplus-original.svg";
+import c from "../assets/icons/c-original.svg";
 
 const responsive = {
   superLargeDesktop: {
@@ -92,6 +93,14 @@ export const Skills = () => {
                 <div className="item">
                   <img src={putty} alt="PuTTY" />
                   <h5>PuTTY</h5>
+                </div>
+                <div className="item">
+                  <img src={cpp} alt="C++" />
+                  <h5>C++</h5>
+                </div>
+                <div className="item">
+                  <img src={c} alt="C" />
+                  <h5>C</h5>
                 </div>
               </Carousel>
             </div>

@@ -4,6 +4,8 @@ import projectImg1 from "../assets/img/babble-img.png";
 import projectImg2 from "../assets/img/cryptonaut-img.png";
 import projectImg3 from "../assets/img/medimate-img.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projectsDetails = [
@@ -34,26 +36,36 @@ export const Projects = () => {
     <section className="project" id="projects">
       <Container>
         <Row>
-          <Col>
-            <h2>Projects</h2>
-            <p>
-              In my projects, I have developed full-stack applications using
-              technologies like ReactJS, NodeJS, and MongoDB. Each project
-              emphasizes clean, scalable code, user-friendly interfaces, and
-              seamless performance, reflecting my commitment to delivering
-              functional and efficient solutions.
-            </p>
-            <Row>
-              {projectsDetails.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  imgURL={project.imgURL}
-                  view={project.view}
-                />
-              ))}
-            </Row>
+          <Col size={12}>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <h2>Projects</h2>
+                  <p>
+                    In my projects, I have developed full-stack applications
+                    using technologies like ReactJS, NodeJS, and MongoDB. Each
+                    project emphasizes clean, scalable code, user-friendly
+                    interfaces, and seamless performance, reflecting my
+                    commitment to delivering functional and efficient solutions.
+                  </p>
+                  <Row>
+                    {projectsDetails.map((project, index) => (
+                      <ProjectCard
+                        key={index}
+                        title={project.title}
+                        description={project.description}
+                        imgURL={project.imgURL}
+                        view={project.view}
+                      />
+                    ))}
+                  </Row>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>

@@ -8,7 +8,6 @@ import "animate.css";
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-//   const [index, setIndex] = useState(1);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const toRotate = [
@@ -33,17 +32,12 @@ export const Banner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-    //   setIndex((prevIndex) => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-    //   setIndex(1);
       setDelta(500);
     }
-    // } else {
-    //   setIndex((prevIndex) => prevIndex + 1);
-    // }
   };
 
   useEffect(() => {
@@ -54,7 +48,7 @@ export const Banner = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text]);
+  });
 
   return (
     <section className="banner" id="home">
@@ -70,7 +64,8 @@ export const Banner = () => {
                 >
                   <span className="tagline">Welcome to my Porfolio</span>
                   <h1>
-                    {"Hi! I'm Archit"}<br/>
+                    {"Hi! I'm Archit"}
+                    <br />
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
@@ -82,14 +77,14 @@ export const Banner = () => {
                   <p>
                     A computer science graduate hoping to become a software
                     developer with practical knowledge of HTML, CSS, JavaScript,
-                    C++, and Python. Quick learner, enthusiastic solver of
-                    problems, and always up for a challenge. I'm eager to
-                    contribute my technical expertise, flexibility, and new
-                    viewpoint to a dynamic software development team. Let's get
-                    in touch and discuss how I can help create meaningful
-                    solutions and be an invaluable member of your team!
+                    and C++. Quick learner, enthusiastic solver of problems, and
+                    always up for a challenge. I'm eager to contribute my
+                    technical expertise, flexibility, and new viewpoint to a
+                    dynamic software development team. Let's get in touch and
+                    discuss how I can help create meaningful solutions and be an
+                    invaluable member of your team!
                   </p>
-                  <button onClick={() => console.log("Connect")}>
+                  <button onClick={() => window.location.replace("/#contact")}>
                     Let's Connect <ArrowRightCircle size={25} />{" "}
                   </button>
                 </div>
