@@ -1,4 +1,5 @@
 import "./App.css";
+import { FixedButton } from "./components/FixedButton";
 import { Banner } from "./components/Banner";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <FixedButton />
       <Banner />
       <Skills />
       <Projects />

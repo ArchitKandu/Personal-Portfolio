@@ -19,7 +19,7 @@ export const Projects = () => {
     {
       title: "Cryptonaut",
       description:
-        "A web application built using React that allows user to explore details of various cryptocurrencies.",
+        "A web application built using React that allows user to explore details of various cryptocurrencies that uses CoinGeko API.",
       imgURL: projectImg2,
       view: "https://github.com/ArchitKandu/Cryptonaut",
     },
