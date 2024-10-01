@@ -84,8 +84,14 @@ export const Banner = () => {
                     discuss how I can help create meaningful solutions and be an
                     invaluable member of your team!
                   </p>
-                  <button onClick={() => window.location.replace("/#contact")}>
-                    Let's Connect <ArrowRightCircle size={25} />{" "}
+                  <button
+                    onClick={() =>
+                      window.open(
+                        "https://drive.google.com/file/d/1LrSRwAfcp_rHMpJaqsbwt5mznMecdutY/view?usp=sharing", "_blank"
+                      )
+                    }
+                  >
+                    View Resume <ArrowRightCircle size={25} />{" "}
                   </button>
                 </div>
               )}
