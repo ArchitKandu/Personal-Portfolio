@@ -674,7 +674,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Footer Css ************/
 
 footer {
-    padding: 15px 0;
+    padding: 20px 0;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -689,13 +689,13 @@ footer .navbar-brand {
     margin-bottom: 0;
 }
 
-footer p {
+/* footer p {
     font-weight: 400;
     font-size: 14px;
     color: #B8B8B8;
     letter-spacing: 0.5px;
     margin-top: 10px;
-}
+} */
 
 @media screen and (max-width: 575px) {
     .footer-brand {
