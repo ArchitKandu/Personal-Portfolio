@@ -87,7 +87,7 @@ export const Banner = () => {
                   <button
                     onClick={() =>
                       window.open(
-                        "https://drive.google.com/file/d/1JAaqT4T4V3w7tpirpQ-tu1TQadgicYx8/view?usp=sharing",
+                        "https://drive.google.com/file/d/1CXK25IYaWzY2cEvgqglgiMd0q2OfxDba/view?usp=sharing",
                         "_blank"
                       )
                     }
