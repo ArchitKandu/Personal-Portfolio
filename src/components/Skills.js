@@ -13,6 +13,7 @@ import postman from "../assets/icons/postman-original.svg";
 import putty from "../assets/icons/putty-original.svg";
 import cpp from "../assets/icons/cplusplus-original.svg";
 import c from "../assets/icons/c-original.svg";
+import java from "../assets/icons/java-original.svg";
 
 const responsive = {
   superLargeDesktop: {
@@ -101,6 +102,10 @@ export const Skills = () => {
                 <div className="item">
                   <img src={c} alt="C" />
                   <h5>C</h5>
+                </div>
+                <div className="item">
+                  <img src={java} alt="Java"/>
+                  <h5>Java</h5>
                 </div>
               </Carousel>
             </div>
