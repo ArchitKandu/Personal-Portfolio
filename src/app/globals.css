@@ -1,0 +1,354 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens - the single source of truth for the whole site.
+   Every colour, type step, radius, easing and motion value used in the UI is
+   declared here and consumed through generated Tailwind utilities, so no
+   component needs to hardcode a raw colour or pixel value.
+   ========================================================================== */
+
+@theme inline {
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+/*
+ * Set pre-paint by the inline script in the root layout for the duration of the
+ * intro, so the opening veil never flashes and never depends on hydration.
+ */
+@custom-variant intro (html[data-intro="1"] &);
+
+@theme {
+  /* ---- Surfaces & ink ---------------------------------------------------- */
+  --color-ground: #0b0910;
+  --color-surface: #141020;
+  --color-elevated: #1b1628;
+  --color-line: #241e33;
+  --color-line-strong: #3a3150;
+  --color-line-soft: #1a1526;
+  --color-ink: #efecf4;
+  --color-muted: #9a93a8;
+  --color-faint: #6e677d;
+  --color-accent: #a78bff;
+  --color-glow: #ffd1b0;
+
+  /* ---- Type steps -------------------------------------------------------
+     Each step carries its size, line height and tracking. Weight is always
+     stated separately with a `font-*` utility, because several of these sizes
+     appear at more than one weight. */
+
+  /* Display */
+  --text-display: 7.375rem;
+  --text-display--line-height: 0.9;
+  --text-display--letter-spacing: -0.05em;
+
+  --text-display-md: 4rem;
+  --text-display-md--line-height: 0.9;
+  --text-display-md--letter-spacing: -0.05em;
+
+  --text-display-sm: 2.75rem;
+  --text-display-sm--line-height: 0.9;
+  --text-display-sm--letter-spacing: -0.035em;
+
+  --text-case: 5.75rem;
+  --text-case--line-height: 0.95;
+  --text-case--letter-spacing: -0.045em;
+
+  --text-case-md: 3.75rem;
+  --text-case-md--line-height: 0.95;
+  --text-case-md--letter-spacing: -0.045em;
+
+  --text-case-sm: 2.5rem;
+  --text-case-sm--line-height: 0.95;
+  --text-case-sm--letter-spacing: -0.035em;
+
+  --text-headline-lg: 5.375rem;
+  --text-headline-lg--line-height: 1;
+  --text-headline-lg--letter-spacing: -0.05em;
+
+  --text-headline: 4.125rem;
+  --text-headline--line-height: 1.05;
+  --text-headline--letter-spacing: -0.04em;
+
+  /* One step down, for a section heading whose copy is long enough that the
+     standard step would wrap inside its seven-column measure. */
+  --text-headline-long: 3.25rem;
+  --text-headline-long--line-height: 1.05;
+  --text-headline-long--letter-spacing: -0.04em;
+
+  --text-headline-md: 2.25rem;
+  --text-headline-md--line-height: 1.05;
+  --text-headline-md--letter-spacing: -0.04em;
+
+  --text-headline-sm: 1.875rem;
+  --text-headline-sm--line-height: 1.05;
+  --text-headline-sm--letter-spacing: -0.04em;
+
+  --text-headline-xs: 1.6875rem;
+  --text-headline-xs--line-height: 1.05;
+  --text-headline-xs--letter-spacing: -0.04em;
+
+  /* ---- Titles ----------------------------------------------------------- */
+  --text-title-xl: 2.125rem;
+  --text-title-xl--line-height: 1.05;
+  --text-title-xl--letter-spacing: -0.03em;
+
+  --text-stat: 2.25rem;
+  --text-stat--line-height: 1.1;
+  --text-stat--letter-spacing: -0.03em;
+
+  --text-stat-sm: 1.4375rem;
+  --text-stat-sm--line-height: 1.1;
+  --text-stat-sm--letter-spacing: -0.03em;
+
+  --text-title-lg: 1.625rem;
+  --text-title-lg--line-height: 1.25;
+
+  --text-title: 1.5rem;
+  --text-title--line-height: 1.15;
+  --text-title--letter-spacing: -0.02em;
+
+  /* ---- Body ------------------------------------------------------------- */
+  --text-lead: 1.4375rem;
+  --text-lead--line-height: 1.55;
+
+  --text-lead-sm: 1.3125rem;
+  --text-lead-sm--line-height: 1.6;
+
+  --text-row: 1.3125rem;
+  --text-row--line-height: 1.4;
+  --text-row--letter-spacing: -0.01em;
+
+  --text-row-sm: 1.0625rem;
+  --text-row-sm--line-height: 1.4;
+  --text-row-sm--letter-spacing: -0.01em;
+
+  --text-body-lg: 1.1875rem;
+  --text-body-lg--line-height: 1.7;
+
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.65;
+
+  --text-body-sm: 1.0625rem;
+  --text-body-sm--line-height: 1.65;
+
+  --text-copy-lg: 1rem;
+  --text-copy-lg--line-height: 1.6;
+
+  --text-copy: 0.9375rem;
+  --text-copy--line-height: 1.6;
+
+  --text-meta: 0.875rem;
+  --text-meta--line-height: 1.4;
+
+  /* The size every paragraph collapses to on phones. */
+  --text-body-xs: 0.84375rem;
+  --text-body-xs--line-height: 1.6;
+
+  --text-mini: 0.78125rem;
+  --text-mini--line-height: 1.6;
+
+  /* ---- Labels, pills & CTAs --------------------------------------------- */
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.12em;
+
+  --text-eyebrow-sm: 0.59375rem;
+  --text-eyebrow-sm--line-height: 1;
+  --text-eyebrow-sm--letter-spacing: 0.12em;
+
+  --text-eyebrow-xs: 0.5625rem;
+  --text-eyebrow-xs--line-height: 1;
+  --text-eyebrow-xs--letter-spacing: 0.12em;
+
+  --text-pill: 0.8125rem;
+  --text-pill--line-height: 1;
+
+  --text-tag: 0.6875rem;
+  --text-tag--line-height: 1;
+
+  --text-cta-lg: 1.0625rem;
+  --text-cta-lg--line-height: 1;
+
+  --text-cta: 1rem;
+  --text-cta--line-height: 1;
+
+  --text-cta-sm: 0.9375rem;
+  --text-cta-sm--line-height: 1;
+
+  /* ---- Breakpoints ------------------------------------------------------ */
+  --breakpoint-xs: 21.25rem;
+
+  /* ---- Tracking ---------------------------------------------------------
+     The eyebrow type steps carry 0.12em themselves; these cover the places
+     the design deviates from it. */
+  --tracking-mark: 0.1em;
+  --tracking-tag: 0.11em;
+  --tracking-num: 0.14em;
+  --tracking-badge: 0.15em;
+
+  /* ---- Fluid section rhythm (desktop) ----------------------------------- */
+  --spacing-gutter: clamp(1.5rem, 5vw, 6rem);
+  --spacing-section: clamp(6rem, 12vh, 11.25rem);
+  --spacing-rail: clamp(0.5rem, 1.4vw, 1.625rem);
+
+  /* ---- Blur ------------------------------------------------------------- */
+  --blur-nav: 18px;
+
+  /* ---- Depth ------------------------------------------------------------ */
+  --perspective-stage: 1500px;
+
+  /* ---- Containers ------------------------------------------------------- */
+  --container-page: 90rem;
+  --container-lead: 38.75rem;
+
+  /* ---- Grids ------------------------------------------------------------
+     A work row on phones: index, title over summary, then the arrow. */
+  --grid-template-columns-work: auto 1fr auto;
+
+  /* ---- Radii ------------------------------------------------------------ */
+  --radius-card: 0.875rem;
+  --radius-panel: 1.125rem;
+
+  /* ---- Easing ----------------------------------------------------------- */
+  --ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-stage: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --animate-beacon: beacon 3s ease-in-out infinite;
+
+  @keyframes beacon {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+/* ==========================================================================
+   Base layer
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+
+    /*
+     * A thin rule in the border colour rather than a chrome-coloured bar. The
+     * standard properties are what Chrome 121+, Firefox and Safari 18.2+ use;
+     * older WebKit falls back to the pseudo-elements below, which those
+     * browsers ignore once these are present.
+     */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    /* Two steps of the spacing scale, so it stays in proportion with it. */
+    width: calc(var(--spacing) * 2);
+    height: calc(var(--spacing) * 2);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-line-strong);
+    /* A plain large radius: this path serves browsers predating `infinity`. */
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-faint);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  body {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ground);
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+/* Masks a line of display type so its inner span can slide up from below. */
+@utility line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/* Keeps the stack web nodes inside one shared perspective space. */
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/*
+ * Reserves two lines for a statistic so a row of them shares one baseline
+ * whether the value wraps or not.
+ */
+@utility min-h-2lh {
+  min-height: 2lh;
+}
+
+
+/* Soft off-centre light on the case-study header. */
+@utility case-glow {
+  background-image: radial-gradient(
+    900px 500px at 78% -6%,
+    rgb(255 255 255 / 0.03),
+    transparent 70%
+  );
+}
+
+/* Full-bleed sticky layer that consumes no layout height. */
+@utility sticky-layer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin-bottom: -100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

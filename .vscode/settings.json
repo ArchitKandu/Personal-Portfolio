@@ -1,0 +1,6 @@
+{
+  "//": "Tailwind CSS v4 at-rules are unknown to the built-in CSS language service.",
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}
